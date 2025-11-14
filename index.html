@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Store Điện Thoại</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 
 <body>
@@ -24,8 +25,14 @@
             </nav>
 
             <div class="header-actions">
-                <a href="#" class="btn ghost">Đăng nhập</a>
-                <a href="#" class="btn primary">Đăng ký</a>
+                <span id="user-greeting" class="user-greeting hidden">
+                    Xin chào, <span id="user-name"></span>
+                </span>
+                <button id="login-open" class="btn ghost">Đăng nhập</button>
+                <button id="logout-btn" class="btn ghost hidden">Đăng xuất</button>
+                <button id="cart-button" class="btn secondary">
+                    Giỏ hàng (<span id="cart-count">0</span>)
+                </button>
             </div>
         </div>
     </header>
@@ -63,7 +70,10 @@
                             <h2>PX Phone 15 Pro</h2>
                             <p>Chip X1 • Màn OLED 120Hz • Camera 50MP</p>
                             <p class="phone-price">24.990.000₫</p>
-                            <a href="#products" class="btn full-width">Mua ngay</a>
+                            <button class="btn full-width add-to-cart" data-id="px15pro" data-name="PX Phone 15 Pro"
+                                data-price="24990000">
+                                Thêm vào giỏ
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -81,30 +91,22 @@
                 <div class="feature-grid">
                     <article class="feature-card">
                         <h3>Giá tốt, minh bạch</h3>
-                        <p>
-                            Niêm yết giá rõ ràng, có so sánh giá thị trường. Không phụ phí ẩn.
-                        </p>
+                        <p>Niêm yết giá rõ ràng, có so sánh giá thị trường. Không phụ phí ẩn.</p>
                     </article>
 
                     <article class="feature-card">
                         <h3>Giao nhanh & an toàn</h3>
-                        <p>
-                            Hỗ trợ giao hoả tốc nội thành 2 giờ, đóng gói kỹ, có bảo hiểm vận chuyển.
-                        </p>
+                        <p>Hỗ trợ giao hoả tốc nội thành 2 giờ, đóng gói kỹ, có bảo hiểm vận chuyển.</p>
                     </article>
 
                     <article class="feature-card">
                         <h3>Trả góp linh hoạt</h3>
-                        <p>
-                            Hỗ trợ trả góp qua thẻ tín dụng hoặc công ty tài chính, duyệt nhanh.
-                        </p>
+                        <p>Hỗ trợ trả góp qua thẻ tín dụng hoặc công ty tài chính, duyệt nhanh.</p>
                     </article>
 
                     <article class="feature-card">
                         <h3>Hỗ trợ kỹ thuật</h3>
-                        <p>
-                            Đội ngũ hỗ trợ cài đặt, backup dữ liệu, chuyển máy cho khách miễn phí.
-                        </p>
+                        <p>Đội ngũ hỗ trợ cài đặt, backup dữ liệu, chuyển máy cho khách miễn phí.</p>
                     </article>
                 </div>
             </div>
@@ -157,7 +159,10 @@
                         <h3>PX Phone 15 Pro Max</h3>
                         <p class="product-spec">6.8" OLED • 256GB • 48MP</p>
                         <p class="product-price">29.990.000₫</p>
-                        <button class="btn full-width">Thêm vào giỏ</button>
+                        <button class="btn full-width add-to-cart" data-id="px15promax" data-name="PX Phone 15 Pro Max"
+                            data-price="29990000">
+                            Thêm vào giỏ
+                        </button>
                     </article>
 
                     <article class="product-card">
@@ -165,7 +170,10 @@
                         <h3>Galaxy S25 Ultra</h3>
                         <p class="product-spec">6.9" AMOLED • 512GB • Zoom 10x</p>
                         <p class="product-price">31.490.000₫</p>
-                        <button class="btn full-width">Thêm vào giỏ</button>
+                        <button class="btn full-width add-to-cart" data-id="s25ultra" data-name="Galaxy S25 Ultra"
+                            data-price="31490000">
+                            Thêm vào giỏ
+                        </button>
                     </article>
 
                     <article class="product-card">
@@ -173,7 +181,10 @@
                         <h3>Redmi Note 14 Pro</h3>
                         <p class="product-spec">6.7" 120Hz • 256GB • 67W</p>
                         <p class="product-price">8.490.000₫</p>
-                        <button class="btn full-width">Thêm vào giỏ</button>
+                        <button class="btn full-width add-to-cart" data-id="rn14pro" data-name="Redmi Note 14 Pro"
+                            data-price="8490000">
+                            Thêm vào giỏ
+                        </button>
                     </article>
 
                     <article class="product-card">
@@ -181,7 +192,10 @@
                         <h3>OPPO Reno 12</h3>
                         <p class="product-spec">6.5" OLED • 256GB • Selfie 32MP</p>
                         <p class="product-price">10.990.000₫</p>
-                        <button class="btn full-width">Thêm vào giỏ</button>
+                        <button class="btn full-width add-to-cart" data-id="reno12" data-name="OPPO Reno 12"
+                            data-price="10990000">
+                            Thêm vào giỏ
+                        </button>
                     </article>
 
                     <article class="product-card">
@@ -189,7 +203,10 @@
                         <h3>Galaxy A36</h3>
                         <p class="product-spec">6.4" 90Hz • 128GB • IP67</p>
                         <p class="product-price">6.990.000₫</p>
-                        <button class="btn full-width">Thêm vào giỏ</button>
+                        <button class="btn full-width add-to-cart" data-id="a36" data-name="Galaxy A36"
+                            data-price="6990000">
+                            Thêm vào giỏ
+                        </button>
                     </article>
 
                     <article class="product-card">
@@ -197,7 +214,10 @@
                         <h3>PX Phone SE (2025)</h3>
                         <p class="product-spec">5.8" • 128GB • Nhỏ gọn</p>
                         <p class="product-price">11.490.000₫</p>
-                        <button class="btn full-width">Thêm vào giỏ</button>
+                        <button class="btn full-width add-to-cart" data-id="pxse2025" data-name="PX Phone SE (2025)"
+                            data-price="11490000">
+                            Thêm vào giỏ
+                        </button>
                     </article>
                 </div>
             </div>
@@ -239,6 +259,51 @@
             <p>© 2025 PhoneStore. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- LOGIN MODAL -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <h2>Đăng nhập</h2>
+            <form id="login-form">
+                <label>
+                    Tên đăng nhập
+                    <input type="text" id="login-username" required>
+                </label>
+                <label>
+                    Mật khẩu
+                    <input type="password" id="login-password" required>
+                </label>
+                <p class="modal-hint">Demo: user / 123456</p>
+                <div class="modal-actions">
+                    <button type="submit" class="btn primary">Đăng nhập</button>
+                    <button type="button" id="login-close" class="btn ghost">Đóng</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- CART MODAL -->
+    <div id="cart-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <h2>Giỏ hàng</h2>
+            <div id="cart-items"></div>
+            <p id="cart-empty">Giỏ hàng đang trống.</p>
+            <div class="cart-summary">
+                <span>Tổng:</span>
+                <span id="cart-total">0₫</span>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn primary" id="checkout-btn">
+                    Thanh toán (demo)
+                </button>
+                <button type="button" class="btn ghost" id="cart-close">
+                    Đóng
+                </button>
+            </div>
+        </div>
+    </div>
 
 </body>
 
