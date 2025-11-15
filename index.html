@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Store Điện Thoại</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
 </head>
 
 <body>
@@ -28,9 +27,9 @@
                 <span id="user-greeting" class="user-greeting hidden">
                     Xin chào, <span id="user-name"></span>
                 </span>
-                <button id="login-open" class="btn ghost">Đăng nhập</button>
+                <button id="login-open" class="btn ghost login-btn">Đăng nhập</button>
                 <button id="logout-btn" class="btn ghost hidden">Đăng xuất</button>
-                <button id="cart-button" class="btn secondary">
+                <button id="cart-button" class="btn secondary cart-btn">
                     Giỏ hàng (<span id="cart-count">0</span>)
                 </button>
             </div>
@@ -145,7 +144,6 @@
                                 <option>Sắp xếp</option>
                                 <option>Giá tăng dần</option>
                                 <option>Giá giảm dần</option>
-                                <option>Mới nhất</option>
                                 <option>Bán chạy</option>
                             </select>
                         </div>
@@ -261,10 +259,12 @@
     </footer>
 
     <!-- LOGIN MODAL -->
-    <div id="login-modal" class="modal hidden">
+    <div id="login-modal" class="modal login-modal hidden">
         <div class="modal-backdrop"></div>
         <div class="modal-content">
             <h2>Đăng nhập</h2>
+            <div class="login-alert" style="color: red; text-align: center; padding-bottom: 8px; font-size: small;">
+            </div>
             <form id="login-form">
                 <label>
                     Tên đăng nhập
@@ -276,15 +276,15 @@
                 </label>
                 <p class="modal-hint">Demo: user / 123456</p>
                 <div class="modal-actions">
-                    <button type="submit" class="btn primary">Đăng nhập</button>
-                    <button type="button" id="login-close" class="btn ghost">Đóng</button>
+                    <button type="button" class="btn primary login-submit">Đăng nhập</button>
+                    <button type="button" class="btn ghost login-close">Đóng</button>
                 </div>
             </form>
         </div>
     </div>
 
     <!-- CART MODAL -->
-    <div id="cart-modal" class="modal hidden">
+    <div id="cart-modal" class="modal cart-modal hidden">
         <div class="modal-backdrop"></div>
         <div class="modal-content">
             <h2>Giỏ hàng</h2>
@@ -295,16 +295,16 @@
                 <span id="cart-total">0₫</span>
             </div>
             <div class="modal-actions">
-                <button type="button" class="btn primary" id="checkout-btn">
+                <button type="button" class="btn primary cart-submit" id="checkout-btn">
                     Thanh toán (demo)
                 </button>
-                <button type="button" class="btn ghost" id="cart-close">
+                <button type="button" class="btn ghost cart-close" id="cart-close">
                     Đóng
                 </button>
             </div>
         </div>
     </div>
-
+    <script type="module" src="/script.js" defer></script>
 </body>
 
 </html>
