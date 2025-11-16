@@ -698,3 +698,50 @@ body {
         padding: 16px 14px 12px;
     }
 }
+
+/* Table thanh toán */
+.payment-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.payment-table thead {
+    background: #f3f4f6;
+}
+
+.payment-table th,
+.payment-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+.payment-table th:nth-child(1),
+.payment-table td:nth-child(1),
+.payment-table th:nth-child(4),
+.payment-table td:nth-child(4) {
+    text-align: center;
+}
+
+.payment-table th:nth-child(3),
+.payment-table td:nth-child(3),
+.payment-table th:nth-child(5),
+.payment-table td:nth-child(5) {
+    text-align: right;
+}
+
+/* Footer tổng tiền */
+.payment-table tfoot td {
+    font-weight: 600;
+    border-top: 2px solid #e5e7eb;
+}
+
+.payment-total-label {
+    text-align: right;
+}
+
+.payment-total-value {
+    text-align: right;
+    color: #dc2626;
+}
