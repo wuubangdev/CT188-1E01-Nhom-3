@@ -253,7 +253,10 @@ body {
 }
 
 .phone-img-placeholder {
-    height: 220px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    position: relative;
     border-radius: 18px;
     background: linear-gradient(135deg, #38bdf8, #22c55e);
     display: flex;
@@ -265,6 +268,12 @@ body {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+}
+
+.phone-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .phone-info h2 {
@@ -389,7 +398,7 @@ body {
 /* PRODUCT GRID */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
 }
 
@@ -405,10 +414,19 @@ body {
 }
 
 .product-img {
-    height: 160px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
     border-radius: 14px;
     background: linear-gradient(135deg, #38bdf8, #a855f7);
     margin-bottom: 6px;
+    position: relative;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-card h3 {
@@ -418,6 +436,7 @@ body {
 
 .product-spec {
     font-size: 13px;
+    flex: 1;
     color: var(--text-sub);
 }
 

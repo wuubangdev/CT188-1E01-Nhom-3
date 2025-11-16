@@ -120,11 +120,34 @@ const cardHandle = () => {
     }
 }
 
+const productListElement = document.querySelector(".product-grid");
+
+const renderListProduct = () => {
+    const addProduct = (id, title, image, decs, price) => {
+        const productElement = document.createElement("article");
+        productElement.classList.add("product-card");
+        productElement.innerHTML = `
+                        <div class="product-img">
+                            <img src="${image}" alt="${title}">
+                        </div>
+                        <h3>${title}</h3>
+                        <p class="product-spec">${decs}</p>
+                        <p class="product-price">${price}</p>
+                        <button class="btn full-width add-to-cart" data-id="${id}" data-title="${title}"
+                            data-price="${price}">
+                            Thêm vào giỏ
+                        </button>
+        `
+        productListElement.appendChild(productElement);
+    }
+    productList.forEach((item) => addProduct(item.id, item.title, item.image, item.description, item.price))
+}
 
 
 
 document.addEventListener("DOMContentLoaded", () => {
     loadLogin();
     cardHandle();
+    renderListProduct();
 });
 
